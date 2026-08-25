@@ -1,5 +1,5 @@
 Module Sample
 sub Main()
-Console.WriteLine("GitHub管理の練習")
+Console.WriteLine("サクラエディタで修正しました")
 End sub
 End Module
