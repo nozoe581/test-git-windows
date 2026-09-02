@@ -1,12 +1,21 @@
-name: CI Practice
+name: CI File Check
 
 on:
   push:
 
 jobs:
-  practice:
+  check:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Message
-        run: echo "GitHub Actions worked!"
+      - name: Get source
+        uses: actions/checkout@v4
+
+      - name: Check file
+        run: |
+          if [ -f "test.txt" ]; then
+            echo "test.txt exists"
+          else
+            echo "test.txt does not exist"
+            exit 1
+          fi
